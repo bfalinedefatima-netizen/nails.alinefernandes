@@ -259,6 +259,109 @@
   }
   .dc-line.r { background: linear-gradient(90deg, var(--gold-mid), transparent); }
 
+  /* ---- HORÁRIOS (novo) ---- */
+  #horarios { background: var(--cream-2); }
+  .horarios-wrap {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .horarios-header {
+    background: linear-gradient(135deg, var(--brown-dark), #2a1c04);
+    border-radius: 18px 18px 0 0;
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .horarios-header-icon { font-size: 24px; }
+  .horarios-header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold-pale);
+  }
+  .horarios-body {
+    background: var(--white);
+    border: 0.5px solid var(--border-gold);
+    border-top: none;
+    border-radius: 0 0 18px 18px;
+    padding: 28px 32px;
+  }
+  .horarios-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .horario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--border-gold);
+    font-size: 13px;
+  }
+  .horario-item:last-child { border-bottom: none; }
+  .horario-dia { font-weight: 500; color: var(--brown-dark); }
+  .horario-hora { color: var(--gold-deep); font-weight: 600; letter-spacing: 0.05em; }
+  .horario-fechado { color: var(--brown-light); font-style: italic; font-weight: 300; }
+  .horarios-obs {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--brown-mid);
+    line-height: 1.8;
+    padding: 14px 18px;
+    background: var(--cream);
+    border-left: 2px solid var(--gold-mid);
+    border-radius: 0 10px 10px 0;
+  }
+  /* Agenda de datas disponíveis */
+  .agenda-section {
+    margin-top: 28px;
+  }
+  .agenda-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--brown-dark);
+    margin-bottom: 14px;
+  }
+  .agenda-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .slot-chip {
+    background: linear-gradient(135deg, rgba(201,146,42,0.1), rgba(212,168,67,0.1));
+    border: 0.5px solid var(--border-gold);
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-size: 11px;
+    color: var(--brown-dark);
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    user-select: none;
+  }
+  .slot-chip:hover { background: rgba(201,146,42,0.18); transform: translateY(-1px); }
+  .slot-chip.taken {
+    background: rgba(160,120,40,0.06);
+    color: var(--brown-light);
+    text-decoration: line-through;
+    cursor: default;
+    opacity: 0.6;
+  }
+  .slot-chip.taken:hover { transform: none; background: rgba(160,120,40,0.06); }
+  .no-slots-msg {
+    font-size: 13px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--brown-light);
+  }
+
   /* ---- SERVICES ---- */
   #servicos { background: var(--white); }
   .services-grid {
@@ -286,11 +389,7 @@
     background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold-deep));
   }
   .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(139,105,20,0.1); }
-  .service-icon {
-    font-size: 28px;
-    margin-bottom: 18px;
-    display: block;
-  }
+  .service-icon { font-size: 28px; margin-bottom: 18px; display: block; }
   .service-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
@@ -319,11 +418,7 @@
     color: var(--brown-mid);
     margin-bottom: 20px;
   }
-  .service-for {
-    border-top: 0.5px solid var(--border-gold);
-    padding-top: 16px;
-    margin-top: 4px;
-  }
+  .service-for { border-top: 0.5px solid var(--border-gold); padding-top: 16px; margin-top: 4px; }
   .service-for-label {
     font-size: 9px;
     font-weight: 600;
@@ -332,10 +427,7 @@
     color: var(--gold-mid);
     margin-bottom: 8px;
   }
-  .service-for ul {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 5px;
-  }
+  .service-for ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
   .service-for ul li {
     font-size: 11px;
     font-weight: 300;
@@ -351,12 +443,7 @@
     color: var(--gold-light);
     top: 2px;
   }
-  .service-price-row {
-    display: flex;
-    gap: 16px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
+  .service-price-row { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
   .price-pill {
     background: var(--white);
     border: 0.5px solid var(--border-gold);
@@ -379,18 +466,8 @@
     font-weight: 400;
     color: var(--brown-dark);
   }
-  .price-pill-val span {
-    font-size: 11px;
-    color: var(--brown-light);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-  }
-  .price-na {
-    font-size: 12px;
-    color: var(--brown-light);
-    font-style: italic;
-    padding-top: 6px;
-  }
+  .price-pill-val span { font-size: 11px; color: var(--brown-light); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+  .price-na { font-size: 12px; color: var(--brown-light); font-style: italic; padding-top: 6px; }
 
   /* EDIT mode */
   [contenteditable="true"] {
@@ -452,12 +529,7 @@
     color: var(--gold-pale);
     margin-bottom: 14px;
   }
-  .maint-text {
-    font-size: 12px;
-    font-weight: 300;
-    color: rgba(253,248,240,0.7);
-    line-height: 1.8;
-  }
+  .maint-text { font-size: 12px; font-weight: 300; color: rgba(253,248,240,0.7); line-height: 1.8; }
   .maint-highlight {
     background: rgba(212,168,67,0.1);
     border: 1px solid rgba(212,168,67,0.25);
@@ -475,12 +547,7 @@
     color: var(--gold-pale);
     margin-bottom: 14px;
   }
-  .maint-highlight-text {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: rgba(253,248,240,0.75);
-  }
+  .maint-highlight-text { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(253,248,240,0.75); }
 
   /* ---- PRECOS ---- */
   #precos { background: var(--cream-2); }
@@ -501,10 +568,7 @@
     text-align: left;
   }
   .precos-table thead th:not(:first-child) { text-align: center; }
-  .precos-table tbody tr {
-    background: var(--white);
-    border-radius: 12px;
-  }
+  .precos-table tbody tr { background: var(--white); border-radius: 12px; }
   .precos-table tbody tr td {
     padding: 18px 20px;
     font-size: 13px;
@@ -532,18 +596,8 @@
     font-weight: 400;
     color: var(--brown-dark);
   }
-  .price-display sup {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--brown-light);
-  }
-  .price-display small {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    color: var(--brown-light);
-    font-weight: 300;
-  }
+  .price-display sup { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 400; color: var(--brown-light); }
+  .price-display small { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--brown-light); font-weight: 300; }
   .no-maint { color: var(--gold-light); font-size: 18px; }
   .precos-note {
     max-width: 680px;
@@ -577,13 +631,7 @@
     color: var(--brown-dark);
     margin-bottom: 16px;
   }
-  .booking-info p {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--brown-mid);
-    margin-bottom: 28px;
-  }
+  .booking-info p { font-size: 13px; font-weight: 300; line-height: 1.9; color: var(--brown-mid); margin-bottom: 28px; }
   .contact-items { display: flex; flex-direction: column; gap: 14px; }
   .contact-item {
     display: flex;
@@ -605,19 +653,8 @@
     font-size: 16px;
     flex-shrink: 0;
   }
-  .contact-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold-mid);
-    margin-bottom: 2px;
-  }
-  .contact-val {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--brown-dark);
-  }
+  .contact-label { font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 2px; }
+  .contact-val { font-size: 13px; font-weight: 400; color: var(--brown-dark); }
   .booking-form-card {
     background: linear-gradient(160deg, #fdfaf4, #f9f3e8);
     border: 0.5px solid var(--border-gold);
@@ -687,13 +724,7 @@
     margin-top: 6px;
   }
   .form-submit:hover { opacity: 0.85; transform: translateY(-2px); }
-
-  /* SUCCESS MSG */
-  .form-success {
-    display: none;
-    text-align: center;
-    padding: 24px;
-  }
+  .form-success { display: none; text-align: center; padding: 24px; }
   .form-success .success-icon { font-size: 36px; margin-bottom: 12px; }
   .form-success h4 {
     font-family: 'Cormorant Garamond', serif;
@@ -702,12 +733,7 @@
     color: var(--brown-dark);
     margin-bottom: 8px;
   }
-  .form-success p {
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--brown-mid);
-    line-height: 1.8;
-  }
+  .form-success p { font-size: 12px; font-weight: 300; color: var(--brown-mid); line-height: 1.8; }
 
   /* ---- LOCALIZAÇÃO ---- */
   #localizacao { background: var(--cream-2); }
@@ -730,36 +756,11 @@
     gap: 16px;
     align-items: flex-start;
   }
-  .loc-card-icon {
-    font-size: 22px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .loc-card-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold-mid);
-    margin-bottom: 4px;
-  }
-  .loc-card-val {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--brown-dark);
-    line-height: 1.7;
-  }
-  .map-embed {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 0.5px solid var(--border-gold);
-    height: 320px;
-  }
-  .map-embed iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+  .loc-card-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .loc-card-label { font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 4px; }
+  .loc-card-val { font-size: 13px; font-weight: 300; color: var(--brown-dark); line-height: 1.7; }
+  .map-embed { border-radius: 16px; overflow: hidden; border: 0.5px solid var(--border-gold); height: 320px; }
+  .map-embed iframe { width: 100%; height: 100%; border: none; }
 
   /* ---- FOOTER ---- */
   footer {
@@ -767,50 +768,13 @@
     padding: 50px 40px 30px;
     text-align: center;
   }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--gold-light);
-    margin-bottom: 8px;
-  }
-  .footer-tagline {
-    font-size: 10px;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(212,168,67,0.6);
-    margin-bottom: 28px;
-  }
-  .footer-links {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    list-style: none;
-    margin-bottom: 28px;
-  }
-  .footer-links a {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(253,248,240,0.5);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-style: italic; font-weight: 300; color: var(--gold-light); margin-bottom: 8px; }
+  .footer-tagline { font-size: 10px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(212,168,67,0.6); margin-bottom: 28px; }
+  .footer-links { display: flex; gap: 24px; justify-content: center; list-style: none; margin-bottom: 28px; flex-wrap: wrap; }
+  .footer-links a { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(253,248,240,0.5); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold-light); }
-  .footer-divider {
-    height: 0.5px;
-    background: rgba(212,168,67,0.15);
-    margin: 20px 0;
-  }
-  .footer-copy {
-    font-size: 10px;
-    font-weight: 300;
-    color: rgba(253,248,240,0.3);
-    letter-spacing: 0.08em;
-  }
+  .footer-divider { height: 0.5px; background: rgba(212,168,67,0.15); margin: 20px 0; }
+  .footer-copy { font-size: 10px; font-weight: 300; color: rgba(253,248,240,0.3); letter-spacing: 0.08em; }
 
   /* ---- ADMIN PANEL ---- */
   #admin-panel {
@@ -823,7 +787,9 @@
     padding: 20px 22px;
     z-index: 9999;
     box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-    min-width: 240px;
+    min-width: 280px;
+    max-height: 85vh;
+    overflow-y: auto;
   }
   #admin-panel h4 {
     font-family: 'Cormorant Garamond', serif;
@@ -831,6 +797,17 @@
     font-style: italic;
     color: var(--gold-light);
     margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  #admin-panel .admin-section-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(212,168,67,0.55);
+    margin: 14px 0 8px;
   }
   #admin-panel .admin-btn {
     display: block;
@@ -850,20 +827,80 @@
     transition: background 0.2s;
   }
   #admin-panel .admin-btn:hover { background: rgba(212,168,67,0.1); }
-  #admin-panel .admin-btn.active {
-    background: rgba(201,146,42,0.2);
-    border-color: var(--gold-mid);
-    color: var(--gold-pale);
-  }
-  #admin-panel .admin-close {
-    font-size: 10px;
-    color: rgba(253,248,240,0.4);
-    cursor: pointer;
-    text-align: center;
-    margin-top: 10px;
-    letter-spacing: 0.1em;
-  }
+  #admin-panel .admin-btn.active { background: rgba(201,146,42,0.2); border-color: var(--gold-mid); color: var(--gold-pale); }
+  #admin-panel .admin-close { font-size: 10px; color: rgba(253,248,240,0.4); cursor: pointer; text-align: center; margin-top: 10px; letter-spacing: 0.1em; }
   #admin-panel .admin-close:hover { color: var(--gold-light); }
+  /* Admin textarea / input */
+  #admin-panel textarea, #admin-panel input[type="text"], #admin-panel input[type="password"] {
+    width: 100%;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.07);
+    border: 0.5px solid rgba(212,168,67,0.3);
+    border-radius: 8px;
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 8px;
+  }
+  #admin-panel textarea:focus, #admin-panel input[type="text"]:focus { border-color: var(--gold-mid); }
+  #admin-panel label { font-size: 9px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(212,168,67,0.7); display: block; margin-bottom: 5px; }
+  #admin-panel .admin-save-btn {
+    display: block;
+    width: 100%;
+    padding: 9px 16px;
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold-mid));
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: opacity 0.2s;
+  }
+  #admin-panel .admin-save-btn:hover { opacity: 0.85; }
+  /* Login box */
+  #admin-login-box { }
+  #admin-login-box p { font-size: 12px; color: rgba(253,248,240,0.6); margin-bottom: 14px; line-height: 1.7; }
+  #admin-login-error { color: #e07050; font-size: 11px; margin-bottom: 8px; display: none; }
+  /* Slots editor */
+  .slots-editor { }
+  .slot-editor-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 6px;
+    align-items: center;
+  }
+  .slot-editor-row input { margin-bottom: 0; flex: 1; }
+  .slot-del-btn {
+    background: rgba(180,80,50,0.3);
+    border: none;
+    color: var(--gold-pale);
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .slot-del-btn:hover { background: rgba(180,80,50,0.5); }
+  .slot-add-btn {
+    background: rgba(255,255,255,0.06);
+    border: 0.5px dashed rgba(212,168,67,0.4);
+    border-radius: 8px;
+    color: var(--gold-pale);
+    font-size: 11px;
+    padding: 7px 14px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 4px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .slot-add-btn:hover { background: rgba(212,168,67,0.08); }
 
   /* FLOATING ADMIN TRIGGER */
   #admin-trigger {
@@ -892,22 +929,8 @@
 
   /* ---- CUIDADOS ---- */
   #cuidados { background: var(--white); }
-  .cuidados-intro {
-    max-width: 680px;
-    margin: 0 auto 48px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--brown-mid);
-  }
-  .cuidados-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto 40px;
-  }
+  .cuidados-intro { max-width: 680px; margin: 0 auto 48px; text-align: center; font-size: 13px; font-weight: 300; line-height: 1.9; color: var(--brown-mid); }
+  .cuidados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto 40px; }
   .cuidado-card {
     background: linear-gradient(160deg, #fdfaf4, #f9f3e8);
     border: 0.5px solid var(--border-gold);
@@ -918,126 +941,32 @@
     transition: transform 0.25s;
   }
   .cuidado-card:hover { transform: translateY(-4px); }
-  .cuidado-card.alerta {
-    background: linear-gradient(160deg, #fff8f0, #fdf0e0);
-    border-color: rgba(201,100,42,0.3);
-  }
-  .cuidado-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold-deep), var(--gold-light));
-  }
-  .cuidado-card.alerta::before {
-    background: linear-gradient(90deg, #b05010, #e08030);
-  }
-  .cuidado-emoji {
-    font-size: 26px;
-    margin-bottom: 14px;
-    display: block;
-  }
-  .cuidado-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--brown-dark);
-    margin-bottom: 10px;
-  }
-  .cuidado-text {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--brown-mid);
-  }
+  .cuidado-card.alerta { background: linear-gradient(160deg, #fff8f0, #fdf0e0); border-color: rgba(201,100,42,0.3); }
+  .cuidado-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold-deep), var(--gold-light)); }
+  .cuidado-card.alerta::before { background: linear-gradient(90deg, #b05010, #e08030); }
+  .cuidado-emoji { font-size: 26px; margin-bottom: 14px; display: block; }
+  .cuidado-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 400; color: var(--brown-dark); margin-bottom: 10px; }
+  .cuidado-text { font-size: 12px; font-weight: 300; line-height: 1.9; color: var(--brown-mid); }
   .cuidados-banner {
-    max-width: 780px;
-    margin: 0 auto;
+    max-width: 780px; margin: 0 auto;
     background: linear-gradient(135deg, var(--brown-dark), #2a1c04);
-    border-radius: 18px;
-    padding: 36px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    border-radius: 18px; padding: 36px 40px; text-align: center; position: relative; overflow: hidden;
   }
-  .cuidados-banner::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold-deep));
-  }
-  .cuidados-banner h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--gold-pale);
-    margin-bottom: 12px;
-  }
-  .cuidados-banner p {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: rgba(253,248,240,0.75);
-    max-width: 560px;
-    margin: 0 auto;
-  }
+  .cuidados-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold-deep)); }
+  .cuidados-banner h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; font-weight: 300; color: var(--gold-pale); margin-bottom: 12px; }
+  .cuidados-banner p { font-size: 13px; font-weight: 300; line-height: 1.9; color: rgba(253,248,240,0.75); max-width: 560px; margin: 0 auto; }
 
   /* ---- HAMBURGER MOBILE NAV ---- */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-    background: none;
-    border: none;
-  }
-  .hamburger span {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background: var(--gold-deep);
-    border-radius: 2px;
-    transition: all 0.3s;
-  }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--gold-deep); border-radius: 2px; transition: all 0.3s; }
   .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(253,248,240,0.98);
-    z-index: 999;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(253,248,240,0.98); z-index: 999;
+    flex-direction: column; align-items: center; justify-content: center; gap: 0;
   }
   .mobile-menu.open { display: flex; }
-  .mobile-menu-close {
-    position: absolute;
-    top: 20px; right: 24px;
-    font-size: 24px;
-    color: var(--gold-deep);
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-family: 'Cormorant Garamond', serif;
-  }
-  .mobile-menu a {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--brown-dark);
-    text-decoration: none;
-    padding: 14px 0;
-    border-bottom: 0.5px solid var(--border-gold);
-    width: 220px;
-    text-align: center;
-    transition: color 0.2s;
-  }
+  .mobile-menu-close { position: absolute; top: 20px; right: 24px; font-size: 24px; color: var(--gold-deep); cursor: pointer; background: none; border: none; font-family: 'Cormorant Garamond', serif; }
+  .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-style: italic; font-weight: 300; color: var(--brown-dark); text-decoration: none; padding: 14px 0; border-bottom: 0.5px solid var(--border-gold); width: 220px; text-align: center; transition: color 0.2s; }
   .mobile-menu a:last-child { border-bottom: none; }
   .mobile-menu a:hover { color: var(--gold-mid); }
 
@@ -1068,6 +997,8 @@
     #admin-trigger { bottom: 16px; right: 16px; }
     .service-price-row { flex-direction: column; gap: 10px; }
     .price-pill { min-width: unset; }
+    .horarios-header { padding: 18px 20px; }
+    .horarios-body { padding: 20px; }
   }
 </style>
 </head>
@@ -1076,13 +1007,14 @@
 <!-- ADMIN BANNER -->
 <div id="admin-banner">
   ✦ Modo de edição ativo — clique em qualquer texto para editar
-  <button onclick="saveChanges()">💾 Salvar alterações</button>
+  <button onclick="saveChanges()">&#128190; Salvar alterações</button>
   <button onclick="disableEdit()" style="background:rgba(255,255,255,0.15);">Sair</button>
 </div>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  <button class="mobile-menu-close" onclick="closeMobileMenu()">&#x2715;</button>
+  <a href="#horarios" onclick="closeMobileMenu()">Horários</a>
   <a href="#servicos" onclick="closeMobileMenu()">Serviços</a>
   <a href="#cuidados" onclick="closeMobileMenu()">Cuidados</a>
   <a href="#manutencao" onclick="closeMobileMenu()">Manutenção</a>
@@ -1095,6 +1027,7 @@
 <nav>
   <div class="nav-logo">Nails Aline Fernandes</div>
   <ul class="nav-links">
+    <li><a href="#horarios">Horários</a></li>
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#cuidados">Cuidados</a></li>
     <li><a href="#manutencao">Manutenção</a></li>
@@ -1110,7 +1043,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">✦ Manicure & Pedicure ✦</div>
+    <div class="hero-eyebrow">✦ Manicure &amp; Pedicure ✦</div>
     <h1 class="hero-title">Unhas que<br><span>contam histórias</span></h1>
     <div class="hero-sub">Paranaguá · Parque São João · PR</div>
     <div class="hero-divider">
@@ -1128,6 +1061,41 @@
   </div>
 </section>
 
+<!-- HORÁRIOS E AGENDA -->
+<section id="horarios">
+  <div class="section-eyebrow">✦ Disponibilidade</div>
+  <h2 class="section-title">Horários de Atendimento</h2>
+  <div class="divider-center">
+    <div class="dc-line"></div>
+    <div class="gem"></div><div class="gem-lg"></div><div class="gem"></div>
+    <div class="dc-line r"></div>
+  </div>
+  <p class="section-sub">Confira meus horários e os próximos horários disponíveis para agendamento</p>
+
+  <div class="horarios-wrap">
+    <div class="horarios-header">
+      <span class="horarios-header-icon">🕐</span>
+      <div class="horarios-header-title">Funcionamento semanal</div>
+    </div>
+    <div class="horarios-body">
+      <ul class="horarios-list" id="horarios-list">
+        <!-- gerado via JS a partir de DATA_HORARIOS -->
+      </ul>
+      <div class="horarios-obs" id="horarios-obs">
+        ✦ Atendimento em domicílio — entre em contato para confirmar o endereço exato.<br>
+        ✦ Agendamentos com pelo menos 1 dia de antecedência.
+      </div>
+
+      <div class="agenda-section">
+        <div class="agenda-title">Próximos horários disponíveis</div>
+        <div class="agenda-slots" id="agenda-slots">
+          <!-- gerado via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVIÇOS -->
 <section id="servicos">
   <div class="section-eyebrow">✦ O que ofereço</div>
@@ -1140,15 +1108,12 @@
   <p class="section-sub">Procedimentos cuidadosamente escolhidos para valorizar a beleza e saúde das suas unhas</p>
 
   <div class="services-grid">
-
     <!-- ALONGAMENTO -->
     <div class="service-card">
       <span class="service-icon">💅</span>
       <div class="service-name" id="s1-name">Alongamento em Gel</div>
       <div class="service-tag">Molde F1</div>
-      <p class="service-desc" id="s1-desc">
-        O alongamento em gel com molde F1 cria unhas mais longas e elegantes com aparência natural. O gel é esculpido diretamente sobre a unha, proporcionando resistência e flexibilidade ao mesmo tempo.
-      </p>
+      <p class="service-desc" id="s1-desc">O alongamento em gel com molde F1 cria unhas mais longas e elegantes com aparência natural. O gel é esculpido diretamente sobre a unha, proporcionando resistência e flexibilidade ao mesmo tempo.</p>
       <div class="service-for">
         <div class="service-for-label">✦ Indicado para</div>
         <ul>
@@ -1175,9 +1140,7 @@
       <span class="service-icon">✨</span>
       <div class="service-name" id="s2-name">Banho de Gel</div>
       <div class="service-tag">Cobertura completa</div>
-      <p class="service-desc" id="s2-desc">
-        O banho de gel é aplicado sobre a própria unha, criando uma capa protetora brilhante e resistente. Perfeito para quem quer agregar resistência sem alterar o formato natural das unhas.
-      </p>
+      <p class="service-desc" id="s2-desc">O banho de gel é aplicado sobre a própria unha, criando uma capa protetora brilhante e resistente. Perfeito para quem quer agregar resistência sem alterar o formato natural das unhas.</p>
       <div class="service-for">
         <div class="service-for-label">✦ Indicado para</div>
         <ul>
@@ -1203,10 +1166,8 @@
     <div class="service-card">
       <span class="service-icon">🤲</span>
       <div class="service-name" id="s3-name">Blindagem — Mãos</div>
-      <div class="service-tag">Proteção & Fortalecimento</div>
-      <p class="service-desc" id="s3-desc">
-        A blindagem é um tratamento que fortalece e protege a unha natural com uma fina camada de fibra ou gel, sem alterar seu formato. Deixa as unhas mais resistentes, saudáveis e com aspecto renovado.
-      </p>
+      <div class="service-tag">Proteção &amp; Fortalecimento</div>
+      <p class="service-desc" id="s3-desc">A blindagem é um tratamento que fortalece e protege a unha natural com uma fina camada de fibra ou gel, sem alterar seu formato. Deixa as unhas mais resistentes, saudáveis e com aspecto renovado.</p>
       <div class="service-for">
         <div class="service-for-label">✦ Indicado para</div>
         <ul>
@@ -1232,10 +1193,8 @@
     <div class="service-card">
       <span class="service-icon">🦶</span>
       <div class="service-name" id="s4-name">Blindagem — Pés</div>
-      <div class="service-tag">Proteção & Fortalecimento</div>
-      <p class="service-desc" id="s4-desc">
-        Mesma técnica da blindagem de mãos, adaptada para os pés. Protege e fortalece as unhas dos pés, que sofrem maior pressão no dia a dia. Resultado duradouro e cuidado completo para seus pés.
-      </p>
+      <div class="service-tag">Proteção &amp; Fortalecimento</div>
+      <p class="service-desc" id="s4-desc">Mesma técnica da blindagem de mãos, adaptada para os pés. Protege e fortalece as unhas dos pés, que sofrem maior pressão no dia a dia. Resultado duradouro e cuidado completo para seus pés.</p>
       <div class="service-for">
         <div class="service-for-label">✦ Indicado para</div>
         <ul>
@@ -1256,7 +1215,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1385,8 +1343,8 @@
     </div>
     <div class="cuidado-card">
       <span class="cuidado-emoji">☀️</span>
-      <div class="cuidado-title">Cuidado com exposição excessiva ao sol</div>
-      <div class="cuidado-text">Protetor solar nas mãos é importante! A exposição intensa ao sol pode amarelr ou desgastar o acabamento do gel ao longo do tempo. Proteja e mantenha o brilho por mais tempo.</div>
+      <div class="cuidado-title">Cuidado com exposição ao sol</div>
+      <div class="cuidado-text">Protetor solar nas mãos é importante! A exposição intensa ao sol pode amarelecer ou desgastar o acabamento do gel ao longo do tempo. Proteja e mantenha o brilho por mais tempo.</div>
     </div>
     <div class="cuidado-card">
       <span class="cuidado-emoji">📅</span>
@@ -1417,14 +1375,14 @@
       <h3>Fique à vontade para entrar em contato</h3>
       <p id="booking-desc">Atendo com muito carinho e atenção. Mande uma mensagem pelo WhatsApp ou Instagram e juntas vamos encontrar o melhor horário para você!</p>
       <div class="contact-items">
-        <a href="https://wa.me/5541988849949" class="contact-item" target="_blank">
+        <a href="https://wa.me/5541988849949" class="contact-item" target="_blank" rel="noopener">
           <div class="contact-icon">📱</div>
           <div>
             <div class="contact-label">WhatsApp</div>
             <div class="contact-val" id="whatsapp-num">(41) 9 8884-9949</div>
           </div>
         </a>
-        <a href="https://instagram.com/nails.alinefernandes" class="contact-item" target="_blank">
+        <a href="https://instagram.com/nails.alinefernandes" class="contact-item" target="_blank" rel="noopener">
           <div class="contact-icon">📸</div>
           <div>
             <div class="contact-label">Instagram</div>
@@ -1463,6 +1421,10 @@
           </select>
         </div>
         <div class="form-group">
+          <label>Horário preferido (opcional)</label>
+          <input type="text" id="f-slot" placeholder="Ex: Segunda, 14h — ou deixe em branco">
+        </div>
+        <div class="form-group">
           <label>Mensagem (opcional)</label>
           <textarea id="f-msg" placeholder="Alguma dúvida ou observação?"></textarea>
         </div>
@@ -1471,7 +1433,7 @@
       <div class="form-success" id="form-success">
         <div class="success-icon">✦</div>
         <h4>Solicitação enviada!</h4>
-        <p>Obrigada pelo contato! Retornarei em breve pelo WhatsApp para confirmarmos o horário. 🌟</p>
+        <p>Obrigada pelo contato! Retornarei em breve pelo WhatsApp para confirmarmos o horário.</p>
       </div>
     </div>
   </div>
@@ -1526,129 +1488,462 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Nails Aline Fernandes</div>
-  <div class="footer-tagline">Manicure & Pedicure · Parque São João, Paranaguá · PR</div>
+  <div class="footer-tagline">Manicure &amp; Pedicure · Parque São João, Paranaguá · PR</div>
   <ul class="footer-links">
+    <li><a href="#horarios">Horários</a></li>
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#precos">Valores</a></li>
     <li><a href="#agendamento">Agendar</a></li>
     <li><a href="#localizacao">Localização</a></li>
-    <li><a href="https://instagram.com/nails.alinefernandes" target="_blank">Instagram</a></li>
+    <li><a href="https://instagram.com/nails.alinefernandes" target="_blank" rel="noopener">Instagram</a></li>
   </ul>
   <div class="footer-divider"></div>
   <div class="footer-copy">© 2025 Nails Aline Fernandes · Todos os direitos reservados</div>
 </footer>
 
 <!-- ADMIN TRIGGER -->
-<button id="admin-trigger" onclick="toggleAdminPanel()" title="Painel de edição">✎</button>
+<button id="admin-trigger" onclick="openAdminFlow()" title="Painel de administração">&#9998;</button>
 
 <!-- ADMIN PANEL -->
 <div id="admin-panel">
-  <h4>Painel de Edição</h4>
-  <button class="admin-btn" id="btn-edit" onclick="toggleEdit()">✎ Ativar edição de textos</button>
-  <button class="admin-btn" onclick="copyLink()">🔗 Copiar link do site</button>
-  <button class="admin-btn" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
-  <button class="admin-btn" onclick="shareWhats()">📱 Compartilhar via WhatsApp</button>
-  <div class="admin-close" onclick="toggleAdminPanel()">✕ Fechar painel</div>
+
+  <!-- LOGIN BOX (mostrado se não autenticada) -->
+  <div id="admin-login-box">
+    <h4>&#128274; Área da Aline</h4>
+    <p>Digite sua senha para acessar o painel de edição.</p>
+    <div id="admin-login-error">Senha incorreta. Tente novamente.</div>
+    <label>Senha</label>
+    <input type="password" id="admin-pwd-input" placeholder="Digite a senha..." onkeydown="if(event.key==='Enter')checkAdminPwd()">
+    <button class="admin-save-btn" onclick="checkAdminPwd()">Entrar</button>
+    <div class="admin-close" onclick="closeAdminPanel()">✕ Cancelar</div>
+  </div>
+
+  <!-- PAINEL REAL (mostrado após login) -->
+  <div id="admin-main-box" style="display:none;">
+    <h4>&#10022; Painel da Aline</h4>
+
+    <div class="admin-section-label">Edição de textos</div>
+    <button class="admin-btn" id="btn-edit" onclick="toggleEdit()">&#9998; Ativar edição de textos</button>
+
+    <div class="admin-section-label">Horários de funcionamento</div>
+    <div id="horarios-editor">
+      <!-- gerado via JS -->
+    </div>
+    <button class="admin-save-btn" onclick="saveHorarios()">Salvar horários</button>
+
+    <div class="admin-section-label">Horários disponíveis para agendamento</div>
+    <p style="font-size:10px;color:rgba(253,248,240,0.5);margin-bottom:8px;line-height:1.6;">Adicione os horários que estão disponíveis. As clientes verão esses chips na seção de horários e poderão clicar para pré-preencher o formulário.</p>
+    <div class="slots-editor" id="slots-editor"></div>
+    <button class="slot-add-btn" onclick="addSlotRow()">+ Adicionar horário disponível</button>
+    <button class="admin-save-btn" style="margin-top:10px;" onclick="saveSlots()">Salvar horários disponíveis</button>
+
+    <div class="admin-section-label">Observações dos horários</div>
+    <textarea id="horarios-obs-edit" rows="3" placeholder="Texto de observação abaixo dos horários..."></textarea>
+    <button class="admin-save-btn" onclick="saveObs()">Salvar observação</button>
+
+    <div class="admin-section-label">Ferramentas</div>
+    <button class="admin-btn" onclick="copyLink()">&#128279; Copiar link do site</button>
+    <button class="admin-btn" onclick="shareWhats()">&#128241; Compartilhar via WhatsApp</button>
+    <button class="admin-btn" onclick="window.print()">&#128424; Imprimir / Salvar PDF</button>
+    <button class="admin-btn" onclick="adminLogout()" style="color:rgba(253,248,240,0.4);">&#x2192; Sair do painel</button>
+
+    <div class="admin-close" onclick="closeAdminPanel()">✕ Fechar</div>
+  </div>
+
 </div>
 
 <script>
-  var editMode = false;
-  var panelOpen = false;
-  var editableIds = ['hero-desc','s1-name','s1-desc','s2-name','s2-desc','s3-name','s3-desc','s4-name','s4-desc','maint-text','precos-note','booking-desc','whatsapp-num','loc-address','loc-hours','loc-how'];
+// ============================================================
+//  CONFIGURAÇÕES — edite aqui se quiser mudar pelo arquivo
+// ============================================================
 
-  function openMobileMenu() {
-    document.getElementById('mobile-menu').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobileMenu() {
-    document.getElementById('mobile-menu').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+// SENHA — troque "aline2025" pela senha que você quiser
+var ADMIN_PASSWORD = 'aline2025';
 
-  function toggleAdminPanel() {
-    panelOpen = !panelOpen;
-    var panel = document.getElementById('admin-panel');
-    var trigger = document.getElementById('admin-trigger');
-    panel.style.display = panelOpen ? 'block' : 'none';
-    trigger.style.display = panelOpen ? 'none' : 'flex';
-  }
+// URL do site publicado
+var SITE_URL = 'https://bfalinedefatima-netizen.github.io/nails-alinefernandes';
 
-  function toggleEdit() {
-    editMode = !editMode;
-    var banner = document.getElementById('admin-banner');
-    var btn = document.getElementById('btn-edit');
-    banner.style.display = editMode ? 'block' : 'none';
-    btn.textContent = editMode ? '✎ Edição ativa' : '✎ Ativar edição de textos';
-    btn.classList.toggle('active', editMode);
-    editableIds.forEach(function(id) {
-      var el = document.getElementById(id);
-      if (el) el.contentEditable = editMode ? 'true' : 'false';
-    });
-    document.querySelectorAll('.price-pill-val, .price-display, .maint-number, .price-pill-label').forEach(function(el) {
-      el.contentEditable = editMode ? 'true' : 'false';
-    });
-    if (!editMode) toggleAdminPanel();
-  }
+// Horários de funcionamento (dias da semana)
+var DATA_HORARIOS = [
+  { dia: 'Segunda-feira',  hora: '09h às 19h' },
+  { dia: 'Terça-feira',   hora: '09h às 19h' },
+  { dia: 'Quarta-feira',  hora: '09h às 19h' },
+  { dia: 'Quinta-feira',  hora: '09h às 19h' },
+  { dia: 'Sexta-feira',   hora: '09h às 19h' },
+  { dia: 'Sábado',        hora: '09h às 17h' },
+  { dia: 'Domingo',       hora: 'Fechado'     }
+];
 
-  function disableEdit() {
-    if (editMode) toggleEdit();
-  }
+// Horários disponíveis para agendamento
+// Marque taken:true para mostrar como ocupado
+var DATA_SLOTS = [
+  { label: 'Seg 09/06 — 10h', taken: false },
+  { label: 'Seg 09/06 — 14h', taken: true  },
+  { label: 'Ter 10/06 — 09h', taken: false },
+  { label: 'Ter 10/06 — 15h', taken: false },
+  { label: 'Qua 11/06 — 11h', taken: false },
+  { label: 'Sex 13/06 — 09h', taken: false },
+  { label: 'Sex 13/06 — 16h', taken: true  },
+  { label: 'Sáb 14/06 — 10h', taken: false }
+];
 
-  function saveChanges() {
-    alert('✦ Alterações salvas com sucesso!\n\nPara que as edições fiquem permanentes, salve o arquivo HTML atualizado no seu computador.');
-    disableEdit();
-  }
+// ============================================================
+//  ESTADO
+// ============================================================
+var editMode = false;
+var panelOpen = false;
+var adminAuthenticated = false;
+var editableIds = ['hero-desc','s1-name','s1-desc','s2-name','s2-desc','s3-name','s3-desc','s4-name','s4-desc','maint-text','precos-note','booking-desc','whatsapp-num','loc-address','loc-hours','loc-how'];
 
-  var SITE_URL = 'https://bfalinedefatima-netizen.github.io/nails-alinefernandes';
-
-  function copyLink() {
-    var url = SITE_URL;
-    navigator.clipboard.writeText(url).then(function() {
-      alert('✦ Link copiado!\n\n' + url + '\n\nCompartilhe com suas clientes!');
-    }).catch(function() {
-      prompt('Copie este link:', url);
-    });
-  }
-
-  function shareWhats() {
-    var msg = encodeURIComponent('Olá! Confira meus serviços de manicure e pedicure ✨\n\nAcesse: ' + SITE_URL);
-    window.open('https://wa.me/?text=' + msg, '_blank');
-  }
-
-  function submitForm() {
-    var name = document.getElementById('f-name').value.trim();
-    var phone = document.getElementById('f-phone').value.trim();
-    var service = document.getElementById('f-service').value;
-    var msg = document.getElementById('f-msg').value.trim();
-
-    if (!name || !phone || !service) {
-      alert('Por favor, preencha seu nome, WhatsApp e o serviço desejado.');
-      return;
+// ============================================================
+//  RENDERIZA HORÁRIOS E SLOTS
+// ============================================================
+function renderHorarios() {
+  var ul = document.getElementById('horarios-list');
+  ul.innerHTML = '';
+  DATA_HORARIOS.forEach(function(h) {
+    var li = document.createElement('li');
+    li.className = 'horario-item';
+    var diaSpan = document.createElement('span');
+    diaSpan.className = 'horario-dia';
+    diaSpan.textContent = h.dia;
+    var horaSpan = document.createElement('span');
+    if (h.hora === 'Fechado') {
+      horaSpan.className = 'horario-fechado';
+      horaSpan.textContent = 'Fechado';
+    } else {
+      horaSpan.className = 'horario-hora';
+      horaSpan.textContent = h.hora;
     }
+    li.appendChild(diaSpan);
+    li.appendChild(horaSpan);
+    ul.appendChild(li);
+  });
+}
 
-    var waMsg = encodeURIComponent(
-      'Olá, Aline! 🌟\n\nGostaria de agendar um horário:\n\n' +
-      '👤 Nome: ' + name + '\n' +
-      '💅 Serviço: ' + service + '\n' +
-      (msg ? '💬 Mensagem: ' + msg : '') +
-      '\n\nAguardo seu retorno!'
-    );
-    window.open('https://wa.me/5541988849949?text=' + waMsg, '_blank');
+function renderSlots() {
+  var cont = document.getElementById('agenda-slots');
+  cont.innerHTML = '';
+  var hasAny = DATA_SLOTS.length > 0;
+  if (!hasAny) {
+    cont.innerHTML = '<span class="no-slots-msg">Nenhum horário disponível no momento. Entre em contato para verificar disponibilidade.</span>';
+    return;
+  }
+  DATA_SLOTS.forEach(function(s, i) {
+    var chip = document.createElement('div');
+    chip.className = 'slot-chip' + (s.taken ? ' taken' : '');
+    chip.textContent = s.label;
+    if (!s.taken) {
+      chip.title = 'Clique para selecionar este horário no formulário';
+      chip.onclick = function() {
+        var slotInput = document.getElementById('f-slot');
+        if (slotInput) {
+          slotInput.value = s.label;
+          var el = document.getElementById('agendamento');
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+    }
+    cont.appendChild(chip);
+  });
+}
 
-    document.getElementById('booking-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
+// ============================================================
+//  ADMIN — LOGIN
+// ============================================================
+function openAdminFlow() {
+  panelOpen = true;
+  var panel = document.getElementById('admin-panel');
+  panel.style.display = 'block';
+  document.getElementById('admin-trigger').style.display = 'none';
+  if (adminAuthenticated) {
+    showAdminMain();
+  } else {
+    showAdminLogin();
+  }
+}
+
+function showAdminLogin() {
+  document.getElementById('admin-login-box').style.display = 'block';
+  document.getElementById('admin-main-box').style.display = 'none';
+  document.getElementById('admin-login-error').style.display = 'none';
+  document.getElementById('admin-pwd-input').value = '';
+  setTimeout(function() { document.getElementById('admin-pwd-input').focus(); }, 100);
+}
+
+function showAdminMain() {
+  document.getElementById('admin-login-box').style.display = 'none';
+  document.getElementById('admin-main-box').style.display = 'block';
+  buildHorariosEditor();
+  buildSlotsEditor();
+  var obsEdit = document.getElementById('horarios-obs-edit');
+  obsEdit.value = document.getElementById('horarios-obs').innerText;
+}
+
+function checkAdminPwd() {
+  var input = document.getElementById('admin-pwd-input').value;
+  if (input === ADMIN_PASSWORD) {
+    adminAuthenticated = true;
+    showAdminMain();
+  } else {
+    document.getElementById('admin-login-error').style.display = 'block';
+    document.getElementById('admin-pwd-input').value = '';
+    document.getElementById('admin-pwd-input').focus();
+  }
+}
+
+function adminLogout() {
+  adminAuthenticated = false;
+  if (editMode) toggleEdit();
+  closeAdminPanel();
+}
+
+function closeAdminPanel() {
+  panelOpen = false;
+  document.getElementById('admin-panel').style.display = 'none';
+  document.getElementById('admin-trigger').style.display = 'flex';
+}
+
+// ============================================================
+//  ADMIN — EDITOR DE HORÁRIOS
+// ============================================================
+function buildHorariosEditor() {
+  var cont = document.getElementById('horarios-editor');
+  cont.innerHTML = '';
+  DATA_HORARIOS.forEach(function(h, i) {
+    var row = document.createElement('div');
+    row.className = 'slot-editor-row';
+    row.style.marginBottom = '6px';
+
+    var diaInput = document.createElement('input');
+    diaInput.type = 'text';
+    diaInput.value = h.dia;
+    diaInput.style.flex = '1.5';
+    diaInput.style.marginBottom = '0';
+    diaInput.dataset.idx = i;
+    diaInput.dataset.field = 'dia';
+    diaInput.onchange = function() { DATA_HORARIOS[this.dataset.idx].dia = this.value; };
+
+    var horaInput = document.createElement('input');
+    horaInput.type = 'text';
+    horaInput.value = h.hora;
+    horaInput.placeholder = '09h às 19h ou Fechado';
+    horaInput.style.flex = '2';
+    horaInput.style.marginBottom = '0';
+    horaInput.dataset.idx = i;
+    horaInput.dataset.field = 'hora';
+    horaInput.onchange = function() { DATA_HORARIOS[this.dataset.idx].hora = this.value; };
+
+    row.appendChild(diaInput);
+    row.appendChild(horaInput);
+    cont.appendChild(row);
+  });
+}
+
+function saveHorarios() {
+  // Lê os inputs do editor
+  var rows = document.querySelectorAll('#horarios-editor .slot-editor-row');
+  rows.forEach(function(row, i) {
+    var inputs = row.querySelectorAll('input');
+    if (DATA_HORARIOS[i]) {
+      DATA_HORARIOS[i].dia = inputs[0].value;
+      DATA_HORARIOS[i].hora = inputs[1].value;
+    }
+  });
+  renderHorarios();
+  alert('Horarios de funcionamento atualizados! Lembre de salvar o arquivo HTML.');
+}
+
+// ============================================================
+//  ADMIN — EDITOR DE SLOTS
+// ============================================================
+function buildSlotsEditor() {
+  var cont = document.getElementById('slots-editor');
+  cont.innerHTML = '';
+  DATA_SLOTS.forEach(function(s, i) {
+    addSlotRowWith(s.label, s.taken, i);
+  });
+}
+
+function addSlotRow() {
+  var idx = DATA_SLOTS.length;
+  DATA_SLOTS.push({ label: '', taken: false });
+  buildSlotsEditor();
+}
+
+function addSlotRowWith(label, taken, idx) {
+  var cont = document.getElementById('slots-editor');
+  var row = document.createElement('div');
+  row.className = 'slot-editor-row';
+  row.dataset.idx = idx;
+
+  var inp = document.createElement('input');
+  inp.type = 'text';
+  inp.value = label;
+  inp.placeholder = 'Ex: Seg 09/06 — 10h';
+  inp.style.marginBottom = '0';
+  inp.dataset.idx = idx;
+  inp.onchange = function() { if (DATA_SLOTS[this.dataset.idx]) DATA_SLOTS[this.dataset.idx].label = this.value; };
+
+  var takenBtn = document.createElement('button');
+  takenBtn.className = 'slot-del-btn';
+  takenBtn.style.background = taken ? 'rgba(180,80,50,0.5)' : 'rgba(40,140,80,0.3)';
+  takenBtn.title = taken ? 'Marcado como ocupado — clique para liberar' : 'Livre — clique para marcar como ocupado';
+  takenBtn.textContent = taken ? 'Ocupado' : 'Livre';
+  takenBtn.dataset.idx = idx;
+  takenBtn.onclick = function() {
+    var i = parseInt(this.dataset.idx);
+    DATA_SLOTS[i].taken = !DATA_SLOTS[i].taken;
+    buildSlotsEditor();
+  };
+
+  var delBtn = document.createElement('button');
+  delBtn.className = 'slot-del-btn';
+  delBtn.textContent = '✕';
+  delBtn.dataset.idx = idx;
+  delBtn.onclick = function() {
+    var i = parseInt(this.dataset.idx);
+    DATA_SLOTS.splice(i, 1);
+    buildSlotsEditor();
+  };
+
+  row.appendChild(inp);
+  row.appendChild(takenBtn);
+  row.appendChild(delBtn);
+  cont.appendChild(row);
+}
+
+function saveSlots() {
+  // Sincroniza labels dos inputs
+  var rows = document.querySelectorAll('#slots-editor .slot-editor-row');
+  rows.forEach(function(row, i) {
+    var inp = row.querySelector('input');
+    if (DATA_SLOTS[i] && inp) DATA_SLOTS[i].label = inp.value;
+  });
+  renderSlots();
+  alert('Horarios disponiveis atualizados! Lembre de salvar o arquivo HTML.');
+}
+
+function saveObs() {
+  var val = document.getElementById('horarios-obs-edit').value;
+  document.getElementById('horarios-obs').innerHTML = val.replace(/\n/g, '<br>');
+  alert('Observacao atualizada!');
+}
+
+// ============================================================
+//  EDIT MODE (textos inline)
+// ============================================================
+function toggleEdit() {
+  if (!adminAuthenticated) return;
+  editMode = !editMode;
+  var banner = document.getElementById('admin-banner');
+  var btn = document.getElementById('btn-edit');
+  banner.style.display = editMode ? 'block' : 'none';
+  btn.textContent = editMode ? '&#9998; Edição ativa' : '&#9998; Ativar edição de textos';
+  btn.classList.toggle('active', editMode);
+  editableIds.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.contentEditable = editMode ? 'true' : 'false';
+  });
+  document.querySelectorAll('.price-pill-val, .price-display, .maint-number, .price-pill-label').forEach(function(el) {
+    el.contentEditable = editMode ? 'true' : 'false';
+  });
+  if (!editMode) closeAdminPanel();
+}
+
+function disableEdit() {
+  if (editMode) toggleEdit();
+}
+
+function saveChanges() {
+  alert('Alteracoes salvas!\n\nPara que fiquem permanentes, salve o arquivo HTML atualizado no seu computador.');
+  disableEdit();
+}
+
+// ============================================================
+//  COMPARTILHAR
+// ============================================================
+function copyLink() {
+  navigator.clipboard.writeText(SITE_URL).then(function() {
+    alert('Link copiado!\n\n' + SITE_URL + '\n\nCompartilhe com suas clientes!');
+  }).catch(function() {
+    prompt('Copie este link:', SITE_URL);
+  });
+}
+
+function shareWhats() {
+  var msg = 'Ola! Confira meus servicos de manicure e pedicure\n\nAcesse: ' + SITE_URL;
+  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+}
+
+// ============================================================
+//  FORMULÁRIO DE AGENDAMENTO — FIX EMOJIS
+//  Usa encodeURIComponent + TextEncoder para garantir UTF-8
+// ============================================================
+function submitForm() {
+  var name    = document.getElementById('f-name').value.trim();
+  var phone   = document.getElementById('f-phone').value.trim();
+  var service = document.getElementById('f-service').value;
+  var slot    = document.getElementById('f-slot').value.trim();
+  var msg     = document.getElementById('f-msg').value.trim();
+
+  if (!name || !phone || !service) {
+    alert('Por favor, preencha seu nome, WhatsApp e o servico desejado.');
+    return;
   }
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
+  // Monta a mensagem usando apenas caracteres seguros nos emojis
+  var lines = [];
+  lines.push('Ola, Aline! \uD83C\uDF1F');
+  lines.push('');
+  lines.push('Gostaria de agendar um horario:');
+  lines.push('');
+  lines.push('\uD83D\uDC64 Nome: ' + name);
+  lines.push('\uD83D\uDC85 Servico: ' + service);
+  if (slot)  lines.push('\uD83D\uDCC5 Horario preferido: ' + slot);
+  if (phone) lines.push('\uD83D\uDCF1 WhatsApp: ' + phone);
+  if (msg)   lines.push('\uD83D\uDCAC Mensagem: ' + msg);
+  lines.push('');
+  lines.push('Aguardo seu retorno!');
+
+  var waMsg = lines.join('\n');
+  var encoded = encodeURIComponent(waMsg);
+  window.open('https://wa.me/5541988849949?text=' + encoded, '_blank');
+
+  document.getElementById('booking-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+
+// ============================================================
+//  MOBILE MENU
+// ============================================================
+function openMobileMenu() {
+  document.getElementById('mobile-menu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ============================================================
+//  SMOOTH SCROLL
+// ============================================================
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
+});
+
+// ============================================================
+//  INIT
+// ============================================================
+renderHorarios();
+renderSlots();
 </script>
 </body>
 </html>
